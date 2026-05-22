@@ -1,8 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="cr-landing">
+    <h1 class="cr-landing-titulo">¡Bienvenido!</h1>
+    <p class="cr-landing-subtitulo">Catálogo de Cartas de Clash Royale</p>
+
+    <p class="cr-landing-descripcion">
+        Explora todas las cartas del juego organizadas por tipo, calidad y arena.
+        Encuentra a tus tropas favoritas, descubre nuevos hechizos o construye tu próximo mazo desde cero.
+    </p>
+
+    <a class="cr-cta-grande" asp-controller="Catalogo" asp-action="Index">⚔️ Ver Catálogo</a>
 </div>

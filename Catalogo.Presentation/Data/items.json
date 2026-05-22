@@ -1,0 +1,18 @@
+[
+  {
+    "Id": 1,
+    "Nombre": null,
+    "Elixir": 0,
+    "Calidad": "",
+    "Tipo": null,
+    "Arena": 0
+  },
+  {
+    "Id": 2,
+    "Nombre": "Mosquetera",
+    "Elixir": 4,
+    "Calidad": "Com\u00FAn",
+    "Tipo": "Tropa",
+    "Arena": 1
+  }
+]

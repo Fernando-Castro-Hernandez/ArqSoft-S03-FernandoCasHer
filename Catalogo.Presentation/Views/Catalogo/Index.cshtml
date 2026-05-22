@@ -1,0 +1,36 @@
+﻿@model List<CatalogoApp.Domain.Models.Item>
+
+<div class="cr-page">
+    <h1 class="cr-title">Mi Catálogo</h1>
+
+    <!-- Filtros -->
+    <div class="cr-filtros">
+        <a class="cr-filtro" asp-action="Index">Todos</a>
+        @foreach (var t in (ViewBag.Tipos as List<string>) ?? new List<string>())
+        {
+            <a class="cr-filtro" asp-action="Index" asp-route-tipo="@t">@t</a>
+        }
+    </div>
+
+    <!-- Grid de cartas -->
+    <ul class="cr-grid">
+        @foreach (var item in Model)
+        {
+            <li class="cr-card">
+                <div class="cr-elixir">
+                    <span class="cr-elixir-num">@item.Elixir</span>
+                </div>
+                <a class="cr-card-link" asp-action="Detalle" asp-route-id="@item.Id">
+                    <h3 class="cr-nombre">@item.Nombre</h3>
+                    <span class="cr-tipo">@item.Tipo</span>
+                    <p class="cr-calidad">@item.Calidad</p>
+                </a>
+            </li>
+        }
+    </ul>
+
+    <!-- Botón agregar -->
+    <div class="cr-agregar-wrapper">
+        <a class="cr-agregar" asp-action="Agregar">+ Agregar Carta</a>
+    </div>
+</div>

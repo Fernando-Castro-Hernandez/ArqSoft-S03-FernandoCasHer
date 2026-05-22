@@ -37,17 +37,18 @@ namespace CatalogoApp.Application.Services
         }
 
         // Método útil para el filtro por categoría/género
-        public List<Item> ObtenerPorGenero(string genero)
+        // Filtro por tipo
+        public List<Item> ObtenerPorTipo(string tipo)
         {
             return _repo.ObtenerTodos()
-                        .Where(i => i.Genero == genero)
+                        .Where(i => i.Tipo == tipo)
                         .ToList();
         }
 
-        public List<string> ObtenerGeneros()
+        public List<string> ObtenerTipos()
         {
             return _repo.ObtenerTodos()
-                        .Select(i => i.Genero)
+                        .Select(i => i.Tipo)
                         .Distinct()
                         .ToList();
         }

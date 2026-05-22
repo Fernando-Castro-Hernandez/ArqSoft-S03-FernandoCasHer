@@ -1,0 +1,31 @@
+﻿@model CatalogoApp.Domain.Models.Item
+<div class="cr-page">
+    <div class="cr-card-detalle">
+        <div class="cr-elixir-grande">
+            <span class="cr-elixir-num">@Model.Elixir</span>
+        </div>
+
+        <h1 class="cr-nombre-grande">@Model.Nombre</h1>
+
+        <div class="cr-stat">
+            <span class="cr-stat-label">Tipo</span>
+            <span class="cr-stat-value">@Model.Tipo</span>
+        </div>
+        <div class="cr-stat">
+            <span class="cr-stat-label">Calidad</span>
+            <span class="cr-stat-value">@Model.Calidad</span>
+        </div>
+        <div class="cr-stat">
+            <span class="cr-stat-label">Elixir</span>
+            <span class="cr-stat-value">@Model.Elixir</span>
+        </div>
+        <div class="cr-stat">
+            <span class="cr-stat-label">Arena</span>
+            <span class="cr-stat-value">@Model.Arena</span>
+        </div>
+    </div>
+
+    <div class="cr-volver-wrapper">
+        <a class="cr-volver" asp-action="Index">&larr; Volver al Catálogo</a>
+    </div>
+</div>

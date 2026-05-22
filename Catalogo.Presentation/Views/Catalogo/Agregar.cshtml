@@ -1,0 +1,34 @@
+﻿@model CatalogoApp.Domain.Models.Item
+
+<div class="cr-page">
+    <h1 class="cr-title">Agregar Carta</h1>
+
+    <form class="cr-form" asp-action="Agregar" method="post">
+        <div class="cr-form-group">
+            <label class="cr-form-label">Nombre</label>
+            <input class="cr-form-input" asp-for="Nombre" />
+        </div>
+        <div class="cr-form-group">
+            <label class="cr-form-label">Elixir</label>
+            <input class="cr-form-input" asp-for="Elixir" type="number" min="1" max="10" />
+        </div>
+        <div class="cr-form-group">
+            <label class="cr-form-label">Calidad</label>
+            <input class="cr-form-input" asp-for="Calidad" />
+        </div>
+        <div class="cr-form-group">
+            <label class="cr-form-label">Tipo</label>
+            <input class="cr-form-input" asp-for="Tipo" />
+        </div>
+        <div class="cr-form-group">
+            <label class="cr-form-label">Arena</label>
+            <input class="cr-form-input" asp-for="Arena" type="number" min="0" />
+        </div>
+
+        <button type="submit" class="cr-btn-guardar">Guardar</button>
+    </form>
+
+    <div class="cr-volver-wrapper">
+        <a class="cr-volver" asp-action="Index">&larr; Cancelar</a>
+    </div>
+</div>
