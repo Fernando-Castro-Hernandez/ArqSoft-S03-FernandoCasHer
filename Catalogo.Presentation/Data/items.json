@@ -1,11 +1,11 @@
 [
   {
     "Id": 1,
-    "Nombre": null,
-    "Elixir": 0,
-    "Calidad": "",
-    "Tipo": null,
-    "Arena": 0
+    "Nombre": "Fer",
+    "Elixir": 5,
+    "Calidad": "Épica",
+    "Tipo": "Tropa",
+    "Arena": 9
   },
   {
     "Id": 2,
@@ -13,6 +13,14 @@
     "Elixir": 4,
     "Calidad": "Com\u00FAn",
     "Tipo": "Tropa",
+    "Arena": 1
+  },
+  {
+    "Id": 3,
+    "Nombre": "Rayo",
+    "Elixir": 6,
+    "Calidad": "\u00C9pica",
+    "Tipo": "Hechizo",
     "Arena": 1
   }
 ]

@@ -14,15 +14,15 @@ namespace CatalogoApp.Presentation.Controllers
             _service = service;
         }
 
-        // Lista con filtro opcional por género
-        public IActionResult Index(string? genero)
+        // Lista con filtro opcional por tipo
+        public IActionResult Index(string? tipo)
         {
-            var items = string.IsNullOrEmpty(genero)
+            var items = string.IsNullOrEmpty(tipo)
                 ? _service.ObtenerTodos()
-                : _service.ObtenerPorTipo(genero);
+                : _service.ObtenerPorTipo(tipo);
 
-            ViewBag.Generos = _service.ObtenerTipos();
-            ViewBag.GeneroActual = genero;
+            ViewBag.Tipos = _service.ObtenerTipos();
+            ViewBag.TipoActual = tipo;
 
             return View(items);
         }

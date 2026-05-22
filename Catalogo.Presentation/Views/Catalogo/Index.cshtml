@@ -5,10 +5,12 @@
 
     <!-- Filtros -->
     <div class="cr-filtros">
-        <a class="cr-filtro" asp-action="Index">Todos</a>
+        <a class="cr-filtro @(ViewBag.TipoActual == null ? "activo" : "")"
+           asp-action="Index">Todos</a>
         @foreach (var t in (ViewBag.Tipos as List<string>) ?? new List<string>())
         {
-            <a class="cr-filtro" asp-action="Index" asp-route-tipo="@t">@t</a>
+            <a class="cr-filtro @(t == (string)ViewBag.TipoActual ? "activo" : "")"
+               asp-action="Index" asp-route-tipo="@t">@t</a>
         }
     </div>
 
