@@ -785,3 +785,7 @@ body {
     margin-bottom: 1rem;
     text-align: center;
 }
+.cr-saludo {
+    font-weight: bold;
+    color: #ff4d6d;
+}

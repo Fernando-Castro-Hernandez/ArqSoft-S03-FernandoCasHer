@@ -1,1 +1,8 @@
-﻿[]
+[
+  {
+    "Id": 1,
+    "Nombre": "nando",
+    "Email": "jfernandocasher22@gmail.com",
+    "PasswordHash": "$2a$11$0t8XZSujOu.MdeEboG8r4eNMKEhIl5dw7HWsOwqNLMyXffF9S2eJW"
+  }
+]
