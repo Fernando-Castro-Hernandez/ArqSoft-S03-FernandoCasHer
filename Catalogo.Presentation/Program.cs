@@ -32,9 +32,15 @@ builder.Services.AddScoped<IUserRepository>(sp =>
     new JsonUserRepository(
         Path.Combine(builder.Environment.ContentRootPath, "Data", "users.json")));
 
+// Registro del repositorio de reviews (NUEVO)
+builder.Services.AddScoped<IReviewRepository>(sp =>
+    new JsonReviewRepository(
+        Path.Combine(builder.Environment.ContentRootPath, "Data", "reviews.json")));
+
 // === SERVICIOS ===
 builder.Services.AddScoped<ItemService>();
 builder.Services.AddScoped<AuthService>();   // NUEVO
+builder.Services.AddScoped<ReviewService>();   // NUEVO
 
 var app = builder.Build();
 
