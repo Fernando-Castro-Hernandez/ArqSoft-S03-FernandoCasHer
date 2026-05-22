@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<div class="cr-page">
+    <h1 class="cr-title">Iniciar Sesión</h1>
+
+    @if (ViewBag.Error != null)
+    {
+        <p class="cr-error">@ViewBag.Error</p>
+    }
+
+    <form class="cr-form" asp-action="Login" method="post">
+        <div class="cr-form-group">
+            <label class="cr-form-label">Email</label>
+            <input class="cr-form-input" name="email" type="email" />
+        </div>
+        <div class="cr-form-group">
+            <label class="cr-form-label">Contraseña</label>
+            <input class="cr-form-input" name="password" type="password" />
+        </div>
+
+        <button type="submit" class="cr-btn-guardar">Entrar</button>
+    </form>
+
+    <div class="cr-volver-wrapper">
+        <a class="cr-volver" asp-action="Register">¿No tienes cuenta? Regístrate</a>
+    </div>
+</div>
