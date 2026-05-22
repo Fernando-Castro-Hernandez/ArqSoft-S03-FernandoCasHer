@@ -8,13 +8,33 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Registro del repositorio (necesita la ruta del archivo JSON)
+// === SESIÓN ===
+// Necesario para recordar al usuario logueado.
+builder.Services.AddDistributedMemoryCache();   // almacén en memoria para la sesión
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);  // la sesión expira tras 30 min de inactividad
+    options.Cookie.HttpOnly = true;                  // la cookie no es accesible desde JavaScript
+    options.Cookie.IsEssential = true;               // la cookie funciona aunque no se acepten cookies opcionales
+});
+
+// Necesario para leer la sesión desde las vistas (_Layout)
+builder.Services.AddHttpContextAccessor();
+
+// === REPOSITORIOS ===
+// Registro del repositorio de items (ya lo tenías)
 builder.Services.AddScoped<IItemRepository>(sp =>
     new JsonItemRepository(
         Path.Combine(builder.Environment.ContentRootPath, "Data", "items.json")));
 
-// Registro del servicio
+// Registro del repositorio de usuarios (NUEVO)
+builder.Services.AddScoped<IUserRepository>(sp =>
+    new JsonUserRepository(
+        Path.Combine(builder.Environment.ContentRootPath, "Data", "users.json")));
+
+// === SERVICIOS ===
 builder.Services.AddScoped<ItemService>();
+builder.Services.AddScoped<AuthService>();   // NUEVO
 
 var app = builder.Build();
 
@@ -22,12 +42,13 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseRouting();
+
+app.UseSession();        // === NUEVO: activa la sesión en el pipeline ===
 
 app.UseAuthorization();
 
