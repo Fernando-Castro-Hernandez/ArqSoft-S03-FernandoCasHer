@@ -3,13 +3,13 @@
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-
 .cr-page {
     font-family: 'Lilita One', 'Arial Black', sans-serif;
     background: linear-gradient(180deg, #1a468d 0%, #0f2d5c 100%);
     min-height: 100vh;
     padding: 30px 20px;
-    margin: -30px -15px; /* compensa el padding del layout */
+    margin: 0;
+    border-radius: 0;
 }
 
 /* === TÍTULO === */
