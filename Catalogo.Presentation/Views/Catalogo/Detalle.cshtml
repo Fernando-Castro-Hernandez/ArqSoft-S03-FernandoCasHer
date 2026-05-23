@@ -1,4 +1,12 @@
 ﻿@model CatalogoApp.Domain.Models.Item
+@using CatalogoApp.Domain.Models
+
+@{
+    var reviews = ViewBag.Reviews as List<Review> ?? new List<Review>();
+    var promedio = ViewBag.Promedio != null ? (double)ViewBag.Promedio : 0;
+    var hayLogin = Context.Session.GetInt32("UserId") != null;
+}
+
 <div class="cr-page">
     <div class="cr-card-detalle">
         <div class="cr-elixir-grande">
@@ -23,6 +31,75 @@
             <span class="cr-stat-label">Arena</span>
             <span class="cr-stat-value">@Model.Arena</span>
         </div>
+    </div>
+
+    <!-- ===== SECCIÓN DE REVIEWS ===== -->
+    <div class="cr-reviews">
+        <h2 class="cr-reviews-titulo">Reviews</h2>
+
+        @if (!hayLogin)
+        {
+            <!-- NO LOGUEADO: no se ven los comentarios -->
+            <div class="cr-reviews-bloqueado">
+                <p>🔒 Debes iniciar sesión para ver y escribir reviews.</p>
+                <a class="cr-btn-guardar" asp-controller="Account" asp-action="Login">Iniciar sesión</a>
+            </div>
+        }
+        else
+        {
+            <!-- LOGUEADO: promedio + lista + formulario -->
+            <p class="cr-promedio">
+                Rating promedio: <strong>@promedio / 5</strong>
+            </p>
+
+            @if (TempData["ReviewError"] != null)
+            {
+                <p class="cr-error">@TempData["ReviewError"]</p>
+            }
+
+            @if (reviews.Count == 0)
+            {
+                <p class="cr-reviews-vacio">Aún no hay reviews. ¡Sé el primero!</p>
+            }
+            else
+            {
+                <ul class="cr-reviews-lista">
+                    @foreach (var r in reviews)
+                    {
+                        <li class="cr-review">
+                            <div class="cr-review-header">
+                                <span class="cr-review-autor">@r.NombreUser</span>
+                                <span class="cr-review-rating">@(new string('★', r.Rating))@(new string('☆', 5 - r.Rating))</span>
+                            </div>
+                            <p class="cr-review-texto">@r.Comentario</p>
+                        </li>
+                    }
+                </ul>
+            }
+
+            <!-- Formulario para agregar review -->
+            <h3 class="cr-reviews-subtitulo">Agregar tu review</h3>
+            <form class="cr-form" asp-action="AgregarReview" method="post">
+                <input type="hidden" name="itemId" value="@Model.Id" />
+
+                <div class="cr-form-group">
+                    <label class="cr-form-label">Rating</label>
+                    <select class="cr-form-input" name="rating">
+                        <option value="5">★★★★★ 5</option>
+                        <option value="4">★★★★ 4</option>
+                        <option value="3">★★★ 3</option>
+                        <option value="2">★★ 2</option>
+                        <option value="1">★ 1</option>
+                    </select>
+                </div>
+                <div class="cr-form-group">
+                    <label class="cr-form-label">Comentario</label>
+                    <textarea class="cr-form-input" name="comentario" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="cr-btn-guardar">Publicar review</button>
+            </form>
+        }
     </div>
 
     <div class="cr-volver-wrapper">
