@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Docs/">
+    <File Path="Hola.txt" />
+  </Folder>
   <Project Path="Catalogo.Application/Catalogo.Application.csproj" />
   <Project Path="Catalogo.Domain/Catalogo.Domain.csproj" />
   <Project Path="Catalogo.Infraestructure/Catalogo.Infraestructure.csproj" />

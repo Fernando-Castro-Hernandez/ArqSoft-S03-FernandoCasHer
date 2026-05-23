@@ -6,5 +6,21 @@
     "NombreUser": "nando",
     "Comentario": "Es una tropa muy exitosa. Esta padrisima",
     "Rating": 5
+  },
+  {
+    "Id": 2,
+    "ItemId": 4,
+    "UserId": 1,
+    "NombreUser": "nando",
+    "Comentario": "Una carta muy molesta cuando te la juegan en contra pero aveces te saca de apuros cuando lo necesitas",
+    "Rating": 4
+  },
+  {
+    "Id": 3,
+    "ItemId": 4,
+    "UserId": 2,
+    "NombreUser": "ferchito",
+    "Comentario": "La mejor carta del juego, menos cuando el rival la juega contra mi !!!",
+    "Rating": 5
   }
 ]

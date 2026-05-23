@@ -3,7 +3,7 @@
     "Id": 1,
     "Nombre": "Fer",
     "Elixir": 5,
-    "Calidad": "Épica",
+    "Calidad": "\u00C9pica",
     "Tipo": "Tropa",
     "Arena": 9
   },
@@ -22,5 +22,45 @@
     "Calidad": "\u00C9pica",
     "Tipo": "Hechizo",
     "Arena": 1
+  },
+  {
+    "Id": 4,
+    "Nombre": "Mega Caballero",
+    "Elixir": 7,
+    "Calidad": "Legendaria",
+    "Tipo": "Tropa",
+    "Arena": 13
+  },
+  {
+    "Id": 5,
+    "Nombre": "Tronco",
+    "Elixir": 2,
+    "Calidad": "Legendaria",
+    "Tipo": "Hechizo",
+    "Arena": 10
+  },
+  {
+    "Id": 6,
+    "Nombre": "Choza de Duendes",
+    "Elixir": 5,
+    "Calidad": "Especial",
+    "Tipo": "Estructura",
+    "Arena": 5
+  },
+  {
+    "Id": 7,
+    "Nombre": "Veneno",
+    "Elixir": 4,
+    "Calidad": "\u00C9pica",
+    "Tipo": "Hechizo",
+    "Arena": 6
+  },
+  {
+    "Id": 8,
+    "Nombre": "Princesa",
+    "Elixir": 3,
+    "Calidad": "Legendaria",
+    "Tipo": "Tropa",
+    "Arena": 5
   }
 ]

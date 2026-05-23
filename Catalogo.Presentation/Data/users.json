@@ -4,5 +4,11 @@
     "Nombre": "nando",
     "Email": "jfernandocasher22@gmail.com",
     "PasswordHash": "$2a$11$0t8XZSujOu.MdeEboG8r4eNMKEhIl5dw7HWsOwqNLMyXffF9S2eJW"
+  },
+  {
+    "Id": 2,
+    "Nombre": "ferchito",
+    "Email": "jesus.castro@tecdesoftware.edu.mx",
+    "PasswordHash": "$2a$11$0yX4/GTBMDI12AKxHmr9Leyhze8Ge0mTn2MzurorUM43xWHNh3npK"
   }
 ]
